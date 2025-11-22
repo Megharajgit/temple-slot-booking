@@ -1,5 +1,5 @@
 // API Base URL - Change this to your backend URL
-const API_BASE_URL = '/api';
+const API_BASE_URL = 'https://temple-slot-booking-production.up.railway.app/api';
 
 // Section data
 const sections = [
