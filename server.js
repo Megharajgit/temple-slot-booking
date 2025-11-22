@@ -1,3 +1,5 @@
+import mysql from "mysql2/promise";
+
 const express = require('express');
 const mysql = require('mysql2/promise');
 const cors = require('cors');
@@ -11,14 +13,14 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Database connection
+
+
 const db = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: 'Megharaj@123',  // <<< YOUR PASSWORD HERE
-    database: 'temple_booking',
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
+  host: process.env.MYSQLHOST,
+  user: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE,
+  port: process.env.MYSQLPORT
 });
 
 // Health
